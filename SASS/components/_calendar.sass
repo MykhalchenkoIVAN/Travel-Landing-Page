@@ -1,0 +1,167 @@
+.calendar 
+    height: 40rem
+    width: max-content
+    position: absolute
+    background-color: $color-white
+    border-radius: 25px
+    overflow: hidden
+    padding: 1rem 1rem 0rem 1rem
+    box-shadow: $calendar-shadow
+    z-index: 100
+    &-header
+        background: $bg-calendar
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-weight: 700
+        color: $calendar-white
+        padding: 1rem
+        border-radius: 1.5rem 1.5rem 0 0
+    &-week-days
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        font-weight: 600
+        cursor: pointer
+        color:$calendar-gray
+        div
+            display: grid
+            place-items: center
+            color: $color-orange
+            height: 5rem
+        div:hover
+            color: $calendar-black
+            transform: scale(1.2)
+            transition: all .2s ease-in-out
+    &-days
+        display: grid
+        grid-template-columns: repeat(7, 1fr) 
+        gap: 0.2rem
+        color:$calendar-black
+        div
+            width: 3.7rem
+            height: 3.3rem
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 0.5rem
+            position: relative
+            cursor: pointer
+            animation: toTop 1s forwards 
+            &:hover
+                transition: width 0.2s ease-in-out, height 0.2s ease-in-out
+                background-color: $calendar-days-hover
+                border-radius: 20%
+                color:  $calendar-black 
+            &.current-date
+                color: $calendar-current-date
+                background-color: $calendar-black
+                border-radius: 20%                
+    &-footer 
+        padding: 1rem
+        display: flex
+        justify-content: flex-end
+        align-items: center
+                               
+.month
+    &-list 
+        position: absolute
+        top: 26%
+        width: 93%
+        height: 60%
+        background-color: $bg-calendar-grey
+        color: $calendar-black
+        display: grid
+        grid-template-columns: repeat(3, auto)
+        gap: 0.5rem
+        border-radius: 2rem
+        div
+            display: grid
+            place-content: center
+            margin: 0.5rem 1rem
+            cursor: pointer
+            &:hover  
+                background-color: $bg-calendar
+                color: $calendar-gray
+                transform: scale(0.9)
+                transition: all 0.2s ease-in-out
+        &.show
+
+            visibility: visible
+            pointer-events: visible
+            transition: .6s ease-in-out
+            animation: toLeft .71s forwards  
+        &.hideonce
+            visibility: hidden
+        &.hide
+            animation: toRight 1s forwards
+            visibility: none
+            pointer-events: none                     
+    &-picker
+        padding: 0.5rem 1rem
+        border-radius: 1rem
+    &:hover
+        color:  $calendar-gray
+        background: $bg-calendar 
+
+.year
+    &-picker
+        display: flex
+        align-items: center
+    &-change
+        width: 3rem
+        height: 3rem
+        border-radius: 50%
+        display: grid
+        place-items: center
+        margin: 0 1rem
+        cursor: pointer
+        &:hover
+            background-color: $calendar-color-hover
+            transition: all 0.2s ease-in-out
+            transform: scale(1.12)
+            pre
+                color: $calendar-black
+#year
+    &:hover
+        cursor: pointer
+        transform: scale(1.2)
+        transition: all .2s ease-in-out  
+
+.date-time-formate
+    display: flex 
+    justify-content: space-around
+    align-items: center 
+    position: relative
+    top: 3rem 
+
+.day-text-formate 
+    font-size: 1.4rem
+    padding-right: 5%
+    border-right: 0.3rem solid $calendar-border
+    &.hidetime 
+        animation: hidetime 1.5s forwards
+    &.showtime 
+        animation: showtime 1s forwards 
+
+
+.date-time-value 
+    display: block
+    height: max-content
+    width: max-content
+    text-align: center
+
+.time-formate 
+    font-size: 1.5rem 
+    &.hideTime
+        animation: hidetime 1.5s forwards  
+    &.showtime 
+        animation: showtime 1s forwards    
+
+.date-formate
+    &.hideTime 
+        animation: hidetime 1.5s forwards
+    &.showtime 
+        animation: showtime 1s forwards
+
+
+                           
