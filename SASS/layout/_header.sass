@@ -1,5 +1,28 @@
 .header
     height: 72rem
+    z-index: 0
+    overflow: inherit
+    &__inputs
+        width: 50rem
+        height: 7.6rem
+        background-color: $color-white
+        border-radius: 3.8rem
+        box-shadow: $box-shadow
+        background: $color-white url(../img/search_ic.png) no-repeat 43.2rem 1.2rem
+        padding-left: 4.8rem
+        padding-right: 13.1rem
+        position: relative
+    &__input
+        width: 13.5rem  
+        &-left
+            border: none  
+            background: $color-white url(../img/geo_ic.png) no-repeat 12rem
+            outline: none
+        &-right
+            outline: none
+            border: none
+            background: $color-white url(../img/calendar_ic.svg) no-repeat 12rem
+
 .flex
     display: flex 
     justify-content: space-between   

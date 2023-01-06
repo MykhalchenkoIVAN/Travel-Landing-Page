@@ -23,7 +23,7 @@
     <div class="container">
       <header class="header">
         <div class="row flex">
-          <img src="img/logo.png" alt="logo" class="logo" />
+          <img src="img/Logo.svg" alt="logo" class="logo" />
           <div class="nav">
             <a href="#" class="nav-link">Home</a>
             <a href="#" class="nav-link">About us</a>
@@ -41,10 +41,64 @@
             <h1 class="title__h1 margin-bottom-26px">
               Discover the Best Lovely Places
             </h1>
-            <p class="paragraph">
+            <p class="paragraph margin-bottom-40px">
               Plan and book your perfect trip with expert advice, travel tips,
               destination information and inspiration from us.
             </p>
+
+            <div class="row header__inputs">
+              <div class="col-1-of-2 padding-top-20px">
+                <h4 class="title_h4 margin-bottom-8px">Where</h4>
+                <input
+                  type="text"
+                  class="header__input-left"
+                  placeholder="Center Point"
+                />
+              </div>
+              <div class="rectangle"></div>
+              <div class="col-1-of-2 padding-top-20px">
+                <h4 class="title_h4 margin-bottom-8px">Date</h4>
+                <div class="header__input-right" id="input_date">
+                  09 March,2023
+                </div>
+                <div class="calendar hidden">
+                  <div class="calendar-header">
+                    <span class="month-picker" id="month-picker"> May </span>
+                    <div class="year-picker" id="year-picker">
+                      <span class="year-change" id="pre-year">
+                        <pre><</pre>
+                      </span>
+                      <span id="year">2020 </span>
+                      <span class="year-change" id="next-year">
+                        <pre>></pre>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="calendar-body">
+                    <div class="calendar-week-days">
+                      <div>Sun</div>
+                      <div>Mon</div>
+                      <div>Tue</div>
+                      <div>Wed</div>
+                      <div>Thu</div>
+                      <div>Fri</div>
+                      <div>Sat</div>
+                    </div>
+                    <div class="calendar-days"></div>
+                  </div>
+                  <div class="calendar-footer"></div>
+                  <div class="date-time-formate">
+                    <div class="day-text-formate">TODAY</div>
+                    <div class="date-time-value">
+                      <div class="time-formate">02:51:20</div>
+                      <div class="date-formate">23 - july - 2022</div>
+                    </div>
+                  </div>
+                  <div class="month-list"></div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-1-of-2"><img src="img/Image.png" alt="man" /></div>
         </div>
@@ -375,41 +429,98 @@
           </div>
         </section>
       </main>
+      <footer class="footer">
+        <div class="row padding-bottom-80px">
+          <div class="col-1-of-4">
+            <img
+              src="img/Logo.svg"
+              alt="logo"
+              class="logo margin-bottom-20px"
+            />
+            <p class="paragraph footer__paragraph margin-bottom-40px">
+              Enjoy the touring with Salty
+            </p>
+            <div class="footer__wrapper_btn">
+              <a href="#" class="footer__btn">
+                <img src="img/facebook_ic.png" alt="arrow" />
+              </a>
+              <a href="#" class="footer__btn">
+                <img src="img/instagram_ic.png" alt="arrow" />
+              </a>
+              <a href="#" class="footer__btn">
+                <img src="img/tweater_ic.png" alt="arrow" />
+              </a>
+            </div>
+          </div>
+          <div class="col-3-of-4">
+            <div class="row">
+              <div class="col-1-of-4">
+                <h4 class="title_h4 margin-bottom-22px">Resources</h4>
+                <ul type="none">
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Download</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Help Center</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Guide Book</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">App Directory</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-1-of-4">
+                <h4 class="title_h4 margin-bottom-22px">Travellers</h4>
+                <ul type="none">
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Why Travellers</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Enterprice</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Customer Stories</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Instagram post</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-1-of-4">
+                <h4 class="title_h4 margin-bottom-22px">Company</h4>
+                <ul type="none">
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Travelling</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">About Locato</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Success</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Information</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-1-of-4">
+                <h4 class="title_h4 margin-bottom-22px">Get App</h4>
+                <ul type="none">
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">App Store</a>
+                  </li>
+                  <li class="footer__li">
+                    <a href="#" class="footer__li-a">Google Play Store</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <!-- <section class="grid-test">
-      <div class="row">
-        <div class="col-1-of-2">col-1-of-2</div>
-        <div class="col-1-of-2">col-1-of-2</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-3">col-1-of-3</div>
-        <div class="col-1-of-3">col-1-of-3</div>
-        <div class="col-1-of-3">col-1-of-3</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-3">col-1-of-3</div>
-        <div class="col-2-of-3">col-2-of-3</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-4">col-1-of-4</div>
-        <div class="col-1-of-4">col-1-of-4</div>
-        <div class="col-1-of-4">col-1-of-4</div>
-        <div class="col-1-of-4">col-1-of-4</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-4">col-1-of-4</div>
-        <div class="col-1-of-4">col-1-of-4</div>
-        <div class="col-2-of-4">col-2-of-4</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-4">col-1-of-4</div>
-        <div class="col-3-of-4">col-3-of-4</div>
-      </div>
-    </section> -->
+    <script src="js/script.js"></script>
   </body>
 </html>
