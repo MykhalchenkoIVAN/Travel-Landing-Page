@@ -89,7 +89,6 @@ const generateCalendar = (month, year) => {
 
     let first_day = new Date(year, month);
 
-
     for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
 
         let day = document.createElement('div');
@@ -185,8 +184,108 @@ setInterval(() => {
 
 
 // setting the current date in "inputDate" on every reload of the web page
-let e = todayShowDatesArr.textContent
-let stringDay = e.substring(16, 17);
-let stringMonth = e.substring(8, 15);
-let stringYear = e.substring(19, 23);
-inputDate.textContent = `${stringDay} ${stringMonth}, ${stringYear}`
+// let e = [todayShowDatesArr.textContent]
+const stringDay = currentDate.getDay();
+const day = `${currentDate.getDay() + 1}`.padStart(2, '0')
+
+const monthSelectionFromArray = function () {
+    return month_names[currentDate.getMonth()]
+}
+
+const currentMonth1 = monthSelectionFromArray()
+
+inputDate.textContent = `${day} ${currentMonth1}, ${currentDate.getFullYear()}`
+
+// // smooth appearance of site sections when scrolling
+const allSections = document.querySelectorAll('.section');
+
+const appearanceSection = function (entries, observer) {
+    const entry = entries[0];
+    if (!entry.isIntersecting) return;
+    entry.target.classList.remove('section-hidden');
+    observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(appearanceSection, {
+    root: null,
+    threshold: 0.3,
+});
+
+allSections.forEach(function (section) {
+    sectionObserver.observe(section);
+    section.classList.add('section-hidden');
+});
+
+// slider
+const btnDectSection = document.querySelectorAll('.top__destinations-btn');
+const slides = document.querySelectorAll('.collage');
+
+let currentSlide = 0;
+const slidesNumber = slides.length;
+
+const moveToSlide = function (slide) {
+    slides.forEach(
+        (s, index) => (s.style.transform = `translateX(${(index - slide) * 100}%)`)
+    );
+};
+moveToSlide(0);
+
+for (let i = 0; i < btnDectSection.length; i++) {
+    btnDectSection[i].addEventListener('click', function () {
+        moveToSlide(i);
+    })
+}
+const nextSlide = function () {
+    if (currentSlide === slidesNumber - 1) {
+        currentSlide = 0;
+    } else {
+        currentSlide++;
+    }
+
+    moveToSlide(currentSlide);
+    console.log(currentSlide);
+
+};
+
+const previousSlide = function () {
+    if (currentSlide === 0) {
+        moveToSlide(0);
+        currentSlide = slidesNumber - 1;
+    } else {
+        currentSlide--;
+    }
+
+    moveToSlide(currentSlide);
+};
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') previousSlide();
+});
+
+// email validation
+const inputEmail = document.querySelector('.newsletter__input');
+const buttonNews = document.querySelector('.newsletter__btn');
+
+inputEmail.addEventListener("input", inputHandler)
+buttonNews.addEventListener("click", function () {
+    console.log("vcxk");
+})
+
+function inputHandler({ target }) {
+    if (target.hasAttribute("data-reg")) {
+        inputCheck(target);
+    }
+}
+
+function inputCheck(el) {
+    const inputValue = el.value;
+    const inputReg = el.getAttribute("data-reg");
+    const reg = new RegExp(inputReg);
+    if (reg.test(inputValue)) {
+        el.setAttribute("is-valid", "1");
+        el.style.border = "0.2rem solid rgb(0, 196, 0)";
+    } else {
+        el.setAttribute("is-valid", "0");
+        el.style.border = "0.2rem solid rgb(255, 0, 0)";
+    }
+}
